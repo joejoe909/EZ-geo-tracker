@@ -1,11 +1,12 @@
+let apiKey = "beec6cc5881d930f74eb86a67a7a1dae"; //API KEY FOR WEATHER DATA
+let nasaAPI = "0XQbhctwQoswCaA4cSRpTVQqurJiqw1yI3vidInC"; //API KEY FOR NASA "EARTH" API
+let apiCall = "https://api.openweathermap.org/data/2.5/forecast?q=" //API CALL BASED ON CITY NAME
 let date = moment().format('YYYY' + '-' + 'MM' + '-' + 'DD')
 console.log(date)
 let hM = document.createElement('map.js');
 hM.src = "./map.js"
 document.head.appendChild(hM);
 let mLat, mLon;
-console.log("made initial call");
-
 
 
 
@@ -16,8 +17,6 @@ $("#searchBtn").on("click", function () {
 });
 
 function getLatLon(burrito) {
-    let apiKey = "beec6cc5881d930f74eb86a67a7a1dae"; //API KEY FOR WEATHER DATA
-    let apiCall = "https://api.openweathermap.org/data/2.5/forecast?q="; //API CALL BASED ON CITY NAME
     console.log(city)
     let queryURL = apiCall + burrito + "&appid=" + apiKey
     $.ajax({
@@ -40,7 +39,6 @@ function getLatLon(burrito) {
 // getLatLon();
 
 function performNasaCall(enchilada1, enchilada2, enchilada3) {
-    let nasaAPI = "0XQbhctwQoswCaA4cSRpTVQqurJiqw1yI3vidInC"; //API KEY FOR NASA "EARTH" API
     let nasaURL = "https://api.nasa.gov/planetary/earth/assets?lon=" + enchilada2 + "&lat=" + enchilada1 + "&date=" + date + "&&dim=0.50&api_key=" + nasaAPI; //date format - YYYY/MM/DD
     $.ajax({
         url: nasaURL,
@@ -54,16 +52,13 @@ function performNasaCall(enchilada1, enchilada2, enchilada3) {
         console.log(lanSatURL);
         buildLanSatImg(lanSatURL, lanSatDateTime, pop);
         console.log(enchilada3);
-        console.log("line 57 pop " + pop);
-        getMap(mLat, mLon);     
-        //$(window).trigger('resize');
+        console.log(pop);
     });
 
 }
 
 $(document).ajaxStop(function(){
-//   resize();
-
+   resize();
 });
 
 function buildLanSatImg(quesadilla1, quesadilla2, quesadilla3) {
@@ -74,7 +69,7 @@ function buildLanSatImg(quesadilla1, quesadilla2, quesadilla3) {
     $(".image").append("<img id=satImg src=" + quesadilla1 + ">");
     $("#lanSatImgHolder").append("<p>" + "Image taken : " + quesadilla2 + "</p>");
     $("#stats").append("<p>" + "Population : " + quesadilla3 + "</p>");
-  
+    getMap(mLat, mLon);
 }
 
 var openModal = $("#openBtn")
@@ -90,17 +85,15 @@ closeModal.on("click", function () {
 })
 
 
-function resize(){
-
-    window.dispatchEvent(new Event('resize'));
-    console.log("resize event");
+ function resize(){
+     console.log("resize event");
+     window.dispatchEvent(new Event('resize'));
  }
 
 function init(){
     getLatLon("Tucson");
-
+    console.log("made initial call");
 }
 
-console.log("line 102");
-init();
 
+init();

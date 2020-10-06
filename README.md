@@ -1,3 +1,1 @@
 # EZ-geo-tracker
-
-

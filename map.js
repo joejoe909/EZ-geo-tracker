@@ -16,13 +16,12 @@ function setMapViewBounds(map, lat, long) {
   let searchArea = new H.geo.Rect(ulX, ulY, lrX, lrY);
   map.getViewModel().setLookAtData({ bounds: searchArea });
 
-
 }
 
 //Step 1: initialize communication with the platform
 // In your own code, replace variable window.apikey with your own apikey
 var platform = new H.service.Platform({
-  apikey: "HCtYFlO7bCPJ5D08wKhHOl1ICcBv90Eti1XT-I5ONuQ"
+  apikey: "lZJH8sp0pz0p3b0n6IcmBXC6swBQWkeam3I5GT90PGU"
 });
 var defaultLayers = platform.createDefaultLayers();
 
@@ -45,10 +44,8 @@ var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 var ui = H.ui.UI.createDefault(map, defaultLayers);
 
 function getMap(lat, lon) {
-  console.log("rcvd coords " + lat + lon + " getting map.")
+  console.log("rcvd coords" + lat + lon)
   setMapViewBounds(map, lat, lon);
-
+  simulateClick();
 }
-
-console.log("line 52 map.js");
 
