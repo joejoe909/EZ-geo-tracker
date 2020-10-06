@@ -1,0 +1,33 @@
+.field {
+    padding-top: 30px;
+  }
+  
+  html {
+    /*background-image: url(https://cosmosmagazine.com/wp-content/uploads/2019/12/171206-nasa-1.jpg);*/
+  }
+  
+  #map {
+    width: 95%;
+    height: 450px;
+    background: grey;
+  }
+  
+  #panel {
+    width: 100%;
+    height: 400px;
+  }
+  
+  #larger {
+    font-size: small;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #hide {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    cursor: unset;
+  }
+  
