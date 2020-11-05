@@ -1,0 +1,27 @@
+    console.log(lanSatURL);
+    $("#imgHldr").html('');
+
+    const satImg = $("<img id=SatImg src=" + lanSatURL + ">");
+
+    $("#imgHldr").append(satImg);
+    getMap(mLat, mLon);
+
+
+
+    $("#lanSatImgHolder").html('');
+    const pTitle = $("<p class='title' id='larger'>click here to view image</p>");
+    const modal = $('<div class="modal" id="openBtn"></div>');
+    const mdlBkgrnd = $('<div class="modal-background"></div>');
+    
+    const mdlCntn = $('<div class="modal-content"></div>');
+    const pImg = $('<p class="image is-4by3" id="imgHldr">');
+    const satImg = $('<img id = "SatImg" src=' + lanSatURL + '/>');
+    pImg.append(satImg);
+    mdlCntn.append(pImg);
+
+    modal.append(mdlBkgrnd);
+    modal.append(mdlCntn);
+
+    $("#lanSatImgHolder").append(pTitle);
+    $("#lanSatImgHolder").append(modal);
+    getMap(mLat, mLon);

@@ -1,7 +1,7 @@
 console.log("loaded map")
 /**
- * Moves the map to display over Boston using viewBounds
- * @param  {H.Map} map      A HERE Map instance within the application
+ * 
+ * @param  {H.Map} map   A HERE Map instance within the application
  */
 
 // jfarrish code not working yet....
@@ -46,6 +46,7 @@ var ui = H.ui.UI.createDefault(map, defaultLayers);
 function getMap(lat, lon) {
   console.log("rcvd coords" + lat + lon)
   setMapViewBounds(map, lat, lon);
-  simulateClick();
+  // simulateClick();
+  
 }
 
