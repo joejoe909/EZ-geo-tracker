@@ -21,7 +21,7 @@ function setMapViewBounds(map, lat, long) {
 //Step 1: initialize communication with the platform
 // In your own code, replace variable window.apikey with your own apikey
 var platform = new H.service.Platform({
-  apikey: "lZJH8sp0pz0p3b0n6IcmBXC6swBQWkeam3I5GT90PGU"
+  apikey: ""
 });
 var defaultLayers = platform.createDefaultLayers();
 

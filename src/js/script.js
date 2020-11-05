@@ -1,14 +1,14 @@
 console.log('loaded main script: scripts.js')
-let apiKey = "25f5197a6071bfb1c1a6d6ad59c06031"; //API KEY FOR WEATHER DATA
-let nasaAPI = "6ypJt7275Q4YQheygUWbl2h8fxunZlJdHxXT7H9q"; //API KEY FOR NASA "EARTH" API
+let apiKey = ""; //API KEY FOR WEATHER DATA
+let nasaAPI = ""; //API KEY FOR NASA "EARTH" API
 let apiCall = "https://api.openweathermap.org/data/2.5/forecast?q=" //API CALL BASED ON CITY NAME
 let date = moment().subtract(11, 'days').format('YYYY' + '-' + 'MM' + '-' + 'DD');
 console.log("using date of: " + date);
 console.log(date)
 import './map';
-// let hM = document.createElement('map.js');
-// hM.src = "./map.js"
-// document.head.appendChild(hM);
+let hM = document.createElement('map.js');
+hM.src = "./map.js"
+document.head.appendChild(hM);
 let mLat, mLon;
 
 $("#searchBtn").on("click", function () {
